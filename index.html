@@ -32,6 +32,7 @@
     color: var(--crema);
     font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .col {
@@ -124,7 +125,6 @@
     text-decoration: none; color: inherit;
     overflow: hidden;
   }
-  /* la foto de producto viene recortada en blanco: se le da su propio recuadro claro */
   /* altura fija, no proporcion: con aspect-ratio las fotos verticales estiran el marco */
   .carta .marco {
     background: #FFFFFF;
@@ -142,25 +142,31 @@
     object-fit: contain;
   }
   .carta .cuerpo {
-    padding: 10px 11px 11px;
-    display: flex; flex-direction: column; gap: 3px; flex: 1;
+    padding: 10px 11px 12px;
+    display: flex; flex-direction: column; gap: 3px;
+    flex: 1;
   }
   .carta .que { font-size: 21px; line-height: 0.95; }
   .carta .dato { font-size: 11.5px; line-height: 1.35; color: var(--tenue); }
-  .carta .pie {
-    margin-top: auto; padding-top: 9px;
-    display: flex; align-items: center; justify-content: space-between; gap: 6px;
-  }
-  .carta .flecha { color: var(--rosa); font-size: 15px; line-height: 1; }
-  .carta:hover { border-color: var(--rosa); }
-  .carta:hover .que { color: var(--rosa); }
-  .carta:focus-visible { outline: 2px solid var(--sol); outline-offset: 2px; }
 
-  .donde {
-    font-size: 9.5px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.12em;
-    color: var(--agua);
+  /* el boton toca los bordes de la tarjeta: uno flotando dentro se lee como texto */
+  .carta .boton {
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    padding: 11px 8px;
+    background: var(--rosa);
+    color: var(--noche);
+    font-family: 'Archivo', 'Arial Narrow', sans-serif;
+    font-stretch: 62%; font-weight: 900;
+    font-size: 15px; line-height: 1;
+    text-transform: uppercase; letter-spacing: 0.03em;
   }
+  .carta .boton .flecha { font-size: 15px; line-height: 1; }
+
+  .carta:hover { border-color: var(--rosa); }
+  .carta:hover .boton { background: var(--sol); }
+  .carta:active { transform: translateY(1px); }
+  .carta:active .boton { background: var(--sol); }
+  .carta:focus-visible { outline: 2px solid var(--sol); outline-offset: 2px; }
 
   .canales { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .canal {
@@ -170,6 +176,7 @@
     font-size: 19px; text-align: center; line-height: 1;
   }
   .canal:hover { border-color: var(--rosa); color: var(--rosa); }
+  .canal:active { transform: translateY(1px); }
   .canal:focus-visible { outline: 2px solid var(--sol); outline-offset: 2px; }
 
   footer { color: #6E5A70; font-size: 10px; line-height: 1.55; }
@@ -179,6 +186,7 @@
   @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; }
     .dosp { opacity: 1; }
+    .carta:active, .canal:active { transform: none; }
   }
 </style>
 
@@ -200,13 +208,13 @@
         <span class="der">19 nov 2026</span>
       </div>
       <div class="pantalla">
-        <span class="grupo dias"><span class="num" id="d">60</span><span class="uni">días</span></span>
+        <span class="grupo dias"><span class="num" id="d">59</span><span class="uni">días</span></span>
         <span class="dosp">:</span>
-        <span class="grupo"><span class="num" id="h">04</span><span class="uni">hor</span></span>
+        <span class="grupo"><span class="num" id="h">23</span><span class="uni">hor</span></span>
         <span class="dosp">:</span>
-        <span class="grupo"><span class="num" id="m">38</span><span class="uni">min</span></span>
+        <span class="grupo"><span class="num" id="m">55</span><span class="uni">min</span></span>
         <span class="dosp">:</span>
-        <span class="grupo"><span class="num" id="s">09</span><span class="uni">seg</span></span>
+        <span class="grupo"><span class="num" id="s">31</span><span class="uni">seg</span></span>
       </div>
     </div>
     <div class="franja"></div>
@@ -222,8 +230,8 @@
         <span class="cuerpo">
           <span class="que cond">El juego</span>
           <span class="dato">PS5 y Xbox Series.</span>
-          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
+        <span class="boton">Ver en Amazon <span class="flecha">→</span></span>
       </a>
 
       <a class="carta" href="https://www.amazon.es/dp/B07JH7FMJM?tag=gtam-saldo-21" rel="sponsored noopener">
@@ -231,32 +239,32 @@
         <span class="cuerpo">
           <span class="que cond">Saldo PSN</span>
           <span class="dato">Para comprarlo digital el día 19.</span>
-          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
+        <span class="boton">Ver en Amazon <span class="flecha">→</span></span>
       </a>
 
       <a class="carta" href="https://www.amazon.es/dp/B0CLT54ZNZ?tag=gtam-ps5-21" rel="sponsored noopener">
         <span class="marco"><img src="https://m.media-amazon.com/images/I/41yRAPi7UOL._AC_UL400_.jpg" alt="Consola PlayStation 5 modelo Slim" loading="lazy"></span>
         <span class="cuerpo">
           <span class="que cond">PlayStation 5</span>
-          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
+        <span class="boton">Ver en Amazon <span class="flecha">→</span></span>
       </a>
 
       <a class="carta" href="https://www.amazon.es/dp/B08H99BPJN?tag=gtam-mps5-21" rel="sponsored noopener">
         <span class="marco"><img src="https://m.media-amazon.com/images/I/61tpbGZhxBL._AC_UL400_.jpg" alt="Mando inalámbrico DualSense de PlayStation 5" loading="lazy"></span>
         <span class="cuerpo">
           <span class="que cond">Mando PS5</span>
-          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
+        <span class="boton">Ver en Amazon <span class="flecha">→</span></span>
       </a>
 
       <a class="carta" href="https://www.amazon.es/dp/B0F2NC69KK?tag=gtam-mxbox-21" rel="sponsored noopener">
         <span class="marco"><img src="https://m.media-amazon.com/images/I/61UqcXRyUCL._AC_UL400_.jpg" alt="Mando inalámbrico de Xbox en negro" loading="lazy"></span>
         <span class="cuerpo">
           <span class="que cond">Mando Xbox</span>
-          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
+        <span class="boton">Ver en Amazon <span class="flecha">→</span></span>
       </a>
 
       <a class="carta" href="https://www.amazon.es/dp/B0FJD6ZSCG?tag=gtam-ssd-21" rel="sponsored noopener">
@@ -264,8 +272,8 @@
         <span class="cuerpo">
           <span class="que cond">Más espacio</span>
           <span class="dato">SSD de 1 TB. GTA 6 no te va a caber.</span>
-          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
+        <span class="boton">Ver en Amazon <span class="flecha">→</span></span>
       </a>
 
     </div>
