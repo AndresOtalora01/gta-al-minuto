@@ -125,15 +125,19 @@
     overflow: hidden;
   }
   /* la foto de producto viene recortada en blanco: se le da su propio recuadro claro */
+  /* altura fija, no proporcion: con aspect-ratio las fotos verticales estiran el marco */
   .carta .marco {
     background: #FFFFFF;
     display: flex; align-items: center; justify-content: center;
     padding: 10px;
-    aspect-ratio: 4 / 3;
+    height: 150px;
+    overflow: hidden;
   }
   .carta .marco img {
     display: block;
-    max-width: 100%; max-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 0;
     width: auto; height: auto;
     object-fit: contain;
   }
