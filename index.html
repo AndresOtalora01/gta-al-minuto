@@ -108,7 +108,7 @@
   }
   @keyframes latido { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0.15; } }
 
-  /* ---------- sección ---------- */
+  /* ---------- tienda ---------- */
   h2.titulo {
     font-size: 29px; line-height: 0.93;
     text-wrap: balance; margin: 0 0 12px;
@@ -124,10 +124,18 @@
     text-decoration: none; color: inherit;
     overflow: hidden;
   }
-  .carta img {
-    display: block; width: 100%; height: auto;
-    aspect-ratio: 16 / 9; object-fit: cover;
-    max-width: 100%;
+  /* la foto de producto viene recortada en blanco: se le da su propio recuadro claro */
+  .carta .marco {
+    background: #FFFFFF;
+    display: flex; align-items: center; justify-content: center;
+    padding: 10px;
+    aspect-ratio: 4 / 3;
+  }
+  .carta .marco img {
+    display: block;
+    max-width: 100%; max-height: 100%;
+    width: auto; height: auto;
+    object-fit: contain;
   }
   .carta .cuerpo {
     padding: 10px 11px 11px;
@@ -143,17 +151,6 @@
   .carta:hover { border-color: var(--rosa); }
   .carta:hover .que { color: var(--rosa); }
   .carta:focus-visible { outline: 2px solid var(--sol); outline-offset: 2px; }
-
-  .carta.destacada { grid-column: 1 / -1; border-color: var(--sol); }
-  .carta.destacada img { aspect-ratio: 5 / 3; object-position: 50% 26%; }
-  .carta.destacada .que { font-size: 29px; }
-  .carta.destacada .dato { font-size: 12.5px; }
-  .carta.destacada:hover { border-color: var(--sol); }
-  .carta.destacada:hover .que { color: var(--sol); }
-
-  .carta.ancha { grid-column: 1 / -1; }
-  .carta.ancha img { aspect-ratio: 21 / 9; }
-  .carta.ancha .que { font-size: 25px; }
 
   .donde {
     font-size: 9.5px; font-weight: 700;
@@ -216,8 +213,8 @@
 
     <div class="rejilla">
 
-      <a class="carta" href="https://www.amazon.es/s?k=Grand+Theft+Auto+VI&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
-        <img src="c-juego.jpg" alt="Jason en moto" width="620" height="349">
+      <a class="carta" href="https://www.amazon.es/dp/B0GZH9BJYD?tag=gtam-juego-21" target="_blank" rel="sponsored noopener">
+        <span class="marco"><img src="https://m.media-amazon.com/images/I/81Sd2IhEG-L._AC_UL400_.jpg" alt="Grand Theft Auto VI para PlayStation 5" loading="lazy"></span>
         <span class="cuerpo">
           <span class="que cond">El juego</span>
           <span class="dato">PS5 y Xbox Series.</span>
@@ -225,8 +222,8 @@
         </span>
       </a>
 
-      <a class="carta" href="https://www.amazon.es/s?k=tarjeta+regalo+PlayStation+Store&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
-        <img src="c-saldo.jpg" alt="Motel Starlet de noche" width="620" height="349">
+      <a class="carta" href="https://www.amazon.es/dp/B07JH7FMJM?tag=gtam-saldo-21" target="_blank" rel="sponsored noopener">
+        <span class="marco"><img src="https://m.media-amazon.com/images/I/61pRhZYb1JL._AC_UL400_.jpg" alt="Tarjeta regalo de PlayStation Store de 50 euros" loading="lazy"></span>
         <span class="cuerpo">
           <span class="que cond">Saldo PSN</span>
           <span class="dato">Para comprarlo digital el día 19.</span>
@@ -234,43 +231,35 @@
         </span>
       </a>
 
-      <a class="carta" href="https://www.amazon.es/s?k=PlayStation+5&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
-        <img src="c-ps5.jpg" alt="Vice City de noche" width="620" height="349">
+      <a class="carta" href="https://www.amazon.es/dp/B0CLT54ZNZ?tag=gtam-ps5-21" target="_blank" rel="sponsored noopener">
+        <span class="marco"><img src="https://m.media-amazon.com/images/I/41yRAPi7UOL._AC_UL400_.jpg" alt="Consola PlayStation 5 modelo Slim" loading="lazy"></span>
         <span class="cuerpo">
           <span class="que cond">PlayStation 5</span>
           <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
       </a>
 
-      <a class="carta" href="https://www.amazon.es/s?k=Xbox+Series+X&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
-        <img src="c-xbox.jpg" alt="Calle de Vice City" width="620" height="349">
-        <span class="cuerpo">
-          <span class="que cond">Xbox Series X</span>
-          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
-        </span>
-      </a>
-
-      <a class="carta" href="https://www.amazon.es/s?k=mando+DualSense+PS5&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
-        <img src="c-mando.jpg" alt="Lucia entrenando" width="620" height="349">
+      <a class="carta" href="https://www.amazon.es/dp/B08H99BPJN?tag=gtam-mps5-21" target="_blank" rel="sponsored noopener">
+        <span class="marco"><img src="https://m.media-amazon.com/images/I/61tpbGZhxBL._AC_UL400_.jpg" alt="Mando inalámbrico DualSense de PlayStation 5" loading="lazy"></span>
         <span class="cuerpo">
           <span class="que cond">Mando PS5</span>
           <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
       </a>
 
-      <a class="carta" href="https://www.amazon.es/s?k=mando+inal%C3%A1mbrico+Xbox&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
-        <img src="c-mando-xbox.jpg" alt="Estudio en Vice City" width="620" height="349">
+      <a class="carta" href="https://www.amazon.es/dp/B0F2NC69KK?tag=gtam-mxbox-21" target="_blank" rel="sponsored noopener">
+        <span class="marco"><img src="https://m.media-amazon.com/images/I/61UqcXRyUCL._AC_UL400_.jpg" alt="Mando inalámbrico de Xbox en negro" loading="lazy"></span>
         <span class="cuerpo">
           <span class="que cond">Mando Xbox</span>
           <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
       </a>
 
-      <a class="carta ancha" href="https://www.amazon.es/s?k=SSD+1TB+NVMe+PS5&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
-        <img src="c-espacio.jpg" alt="Carretera de Leonida" width="620" height="349">
+      <a class="carta" href="https://www.amazon.es/dp/B0FJD6ZSCG?tag=gtam-ssd-21" target="_blank" rel="sponsored noopener">
+        <span class="marco"><img src="https://m.media-amazon.com/images/I/51iGhdhu59L._AC_UL400_.jpg" alt="SSD NVMe de 1 TB con disipador" loading="lazy"></span>
         <span class="cuerpo">
           <span class="que cond">Más espacio</span>
-          <span class="dato">SSD de 1 TB. GTA 6 no te va a caber en la consola.</span>
+          <span class="dato">SSD de 1 TB. GTA 6 no te va a caber.</span>
           <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
       </a>
