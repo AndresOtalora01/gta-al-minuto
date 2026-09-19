@@ -52,7 +52,6 @@
     text-transform: uppercase;
   }
 
-  /* el atardecer de Vice City, como regla recurrente */
   .franja {
     height: 3px;
     background: linear-gradient(90deg, var(--rosa) 0%, var(--rosa) 38%, var(--sol) 38%, var(--sol) 72%, var(--agua) 72%);
@@ -145,7 +144,6 @@
   .carta:hover .que { color: var(--rosa); }
   .carta:focus-visible { outline: 2px solid var(--sol); outline-offset: 2px; }
 
-  /* la coleccionista, a lo ancho */
   .carta.destacada { grid-column: 1 / -1; border-color: var(--sol); }
   .carta.destacada img { aspect-ratio: 5 / 3; object-position: 50% 26%; }
   .carta.destacada .que { font-size: 29px; }
@@ -153,30 +151,29 @@
   .carta.destacada:hover { border-color: var(--sol); }
   .carta.destacada:hover .que { color: var(--sol); }
 
-  /* la de espacio, a lo ancho para no dejar una suelta */
   .carta.ancha { grid-column: 1 / -1; }
   .carta.ancha img { aspect-ratio: 21 / 9; }
   .carta.ancha .que { font-size: 25px; }
 
-  .pendiente {
-    display: inline-block; padding: 1px 5px 2px;
-    border: 1px dashed var(--agua); color: var(--agua);
-    font-size: 8px; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase;
+  .donde {
+    font-size: 9.5px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--agua);
   }
 
   .canales { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .canal {
-    padding: 13px; background: var(--noche-2);
+    padding: 14px; background: var(--noche-2);
     border: 1px solid var(--linea);
     text-decoration: none; color: var(--crema);
-    font-size: 18px; text-align: center; line-height: 1;
+    font-size: 19px; text-align: center; line-height: 1;
   }
   .canal:hover { border-color: var(--rosa); color: var(--rosa); }
   .canal:focus-visible { outline: 2px solid var(--sol); outline-offset: 2px; }
 
   footer { color: #6E5A70; font-size: 10px; line-height: 1.55; }
-  footer p { margin: 0; }
+  footer p { margin: 0 0 5px; }
+  footer p:last-child { margin-bottom: 0; }
 
   @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; }
@@ -219,71 +216,71 @@
 
     <div class="rejilla">
 
-      <a class="carta destacada" href="#" data-enlace="coleccionista">
+      <a class="carta destacada" href="https://www.amazon.es/s?k=GTA+6+edici%C3%B3n+coleccionista&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
         <img src="coleccionista.jpg" alt="Edición coleccionista de GTA 6" width="900" height="900">
         <span class="cuerpo">
           <span class="que cond">Edición coleccionista</span>
           <span class="dato">La caja con los extras físicos.</span>
-          <span class="pie"><span class="pendiente">Tu enlace</span><span class="flecha">→</span></span>
+          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
       </a>
 
-      <a class="carta" href="#" data-enlace="juego">
+      <a class="carta" href="https://www.amazon.es/s?k=Grand+Theft+Auto+VI&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
         <img src="c-juego.jpg" alt="Jason en moto" width="620" height="349">
         <span class="cuerpo">
           <span class="que cond">El juego</span>
           <span class="dato">PS5 y Xbox Series.</span>
-          <span class="pie"><span class="pendiente">Tu enlace</span><span class="flecha">→</span></span>
+          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
       </a>
 
-      <a class="carta" href="#" data-enlace="saldo">
+      <a class="carta" href="https://www.amazon.es/s?k=tarjeta+regalo+PlayStation+Store&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
         <img src="c-saldo.jpg" alt="Motel Starlet de noche" width="620" height="349">
         <span class="cuerpo">
           <span class="que cond">Saldo PSN</span>
-          <span class="dato">Más barato que la store.</span>
-          <span class="pie"><span class="pendiente">Tu enlace</span><span class="flecha">→</span></span>
+          <span class="dato">Para comprarlo digital el día 19.</span>
+          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
       </a>
 
-      <a class="carta" href="#" data-enlace="ps5">
+      <a class="carta" href="https://www.amazon.es/s?k=PlayStation+5&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
         <img src="c-ps5.jpg" alt="Vice City de noche" width="620" height="349">
         <span class="cuerpo">
           <span class="que cond">PlayStation 5</span>
-          <span class="pie"><span class="pendiente">Tu enlace</span><span class="flecha">→</span></span>
+          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
       </a>
 
-      <a class="carta" href="#" data-enlace="xbox">
+      <a class="carta" href="https://www.amazon.es/s?k=Xbox+Series+X&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
         <img src="c-xbox.jpg" alt="Calle de Vice City" width="620" height="349">
         <span class="cuerpo">
           <span class="que cond">Xbox Series X</span>
-          <span class="pie"><span class="pendiente">Tu enlace</span><span class="flecha">→</span></span>
+          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
       </a>
 
-      <a class="carta" href="#" data-enlace="mando-ps5">
+      <a class="carta" href="https://www.amazon.es/s?k=mando+DualSense+PS5&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
         <img src="c-mando.jpg" alt="Lucia entrenando" width="620" height="349">
         <span class="cuerpo">
           <span class="que cond">Mando PS5</span>
-          <span class="pie"><span class="pendiente">Tu enlace</span><span class="flecha">→</span></span>
+          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
       </a>
 
-      <a class="carta" href="#" data-enlace="mando-xbox">
+      <a class="carta" href="https://www.amazon.es/s?k=mando+inal%C3%A1mbrico+Xbox&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
         <img src="c-mando-xbox.jpg" alt="Estudio en Vice City" width="620" height="349">
         <span class="cuerpo">
           <span class="que cond">Mando Xbox</span>
-          <span class="pie"><span class="pendiente">Tu enlace</span><span class="flecha">→</span></span>
+          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
       </a>
 
-      <a class="carta ancha" href="#" data-enlace="espacio">
+      <a class="carta ancha" href="https://www.amazon.es/s?k=SSD+1TB+NVMe+PS5&tag=gtaalminuto-21" target="_blank" rel="sponsored noopener">
         <img src="c-espacio.jpg" alt="Carretera de Leonida" width="620" height="349">
         <span class="cuerpo">
           <span class="que cond">Más espacio</span>
-          <span class="dato">SSD de 1 TB. No te va a caber.</span>
-          <span class="pie"><span class="pendiente">Tu enlace</span><span class="flecha">→</span></span>
+          <span class="dato">SSD de 1 TB. GTA 6 no te va a caber en la consola.</span>
+          <span class="pie"><span class="donde">Amazon</span><span class="flecha">→</span></span>
         </span>
       </a>
 
@@ -291,12 +288,13 @@
   </section>
 
   <section class="canales">
-    <a class="canal cond" href="#" data-enlace="tiktok">TikTok</a>
-    <a class="canal cond" href="https://www.youtube.com/channel/UCvJQuF-RIdOH39Z7P1Y0LWQ">YouTube</a>
+    <a class="canal cond" href="https://www.tiktok.com/@gta.alminuto" target="_blank" rel="noopener">TikTok</a>
+    <a class="canal cond" href="https://www.youtube.com/channel/UCvJQuF-RIdOH39Z7P1Y0LWQ" target="_blank" rel="noopener">YouTube</a>
   </section>
 
   <footer>
-    <p>Enlaces de afiliado. Imágenes y logo © Rockstar Games. Canal de fans, sin relación con Rockstar Games ni Take-Two.</p>
+    <p>Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos. A ti no te cuesta nada más.</p>
+    <p>Imágenes y logo © Rockstar Games. Canal de fans, sin relación con Rockstar Games ni Take-Two.</p>
   </footer>
 
 </div>
