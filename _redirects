@@ -1,6 +1,9 @@
-/ir/juego        https://www.amazon.es/dp/B0GZH9BJYD?tag=gtam-juego-21    302
-/ir/saldo        https://www.amazon.es/dp/B07JH7FMJM?tag=gtam-saldo-21    302
-/ir/ps5          https://www.amazon.es/dp/B0CLT54ZNZ?tag=gtam-ps5-21      302
-/ir/mando-ps5    https://www.amazon.es/dp/B08H99BPJN?tag=gtam-mps5-21     302
-/ir/mando-xbox   https://www.amazon.es/dp/B0F2NC69KK?tag=gtam-mxbox-21    302
-/ir/ssd          https://www.amazon.es/dp/B0FJD6ZSCG?tag=gtam-ssd-21      302
+# Affiliate links are cloaked behind /ir/<slug> so the Amazon tag never shows in
+# the page source and a dead product is one line to swap. Each slug carries its
+# own tag, which is how Amazon reports per-link earnings.
+/ir/juego       https://www.amazon.es/dp/B0GZH9BJYD?tag=gtam-juego-21    302
+/ir/saldo       https://www.amazon.es/dp/B07JH7FMJM?tag=gtam-saldo-21    302
+/ir/ps5         https://www.amazon.es/dp/B0CLT54ZNZ?tag=gtam-ps5-21      302
+/ir/mando-ps5   https://www.amazon.es/dp/B08H99BPJN?tag=gtam-mps5-21     302
+/ir/mando-xbox  https://www.amazon.es/dp/B0F2NC69KK?tag=gtam-mxbox-21    302
+/ir/ssd         https://www.amazon.es/dp/B0FJD6ZSCG?tag=gtam-ssd-21      302

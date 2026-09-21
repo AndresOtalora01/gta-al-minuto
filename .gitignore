@@ -1,0 +1,4 @@
+.DS_Store
+
+# wrangler build cache and local state (carries the account id, never needed)
+.wrangler/
